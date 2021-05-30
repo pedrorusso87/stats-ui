@@ -1,0 +1,33 @@
+input {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.btn {
+  font-weight: 500;
+  border: none;
+  padding: 2%;
+  width: 50%;
+}
+
+.btnForgetPwd {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btnForgetPwd:hover {
+  text-decoration:none;
+  color:#fff;
+}
+
+.error-field {
+  border: solid red;
+}
+
+.error-message {
+  color: lightcoral;
+}
+
+.row {
+  justify-content: center;
+}
