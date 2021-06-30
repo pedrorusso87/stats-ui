@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { combineLatest, Subject } from 'rxjs';
 @Component({
   selector: 'app-login',
@@ -15,10 +16,11 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private spinner: NgxSpinnerService,
     ) {
       this.loginForm = this.fb.group({
-        email: new FormControl('', Validators.required),
+        username: new FormControl('', Validators.required),
         password: new FormControl('', Validators.required)
       });
     }
@@ -31,6 +33,12 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   validateForm(): void {
+    if (this.loginForm.valid) {
+      this.errors = false;
+      this.spinner.show();
+    } else {
+      this.errors = true;
+    }
   }
 
   listenForLogin(): void {

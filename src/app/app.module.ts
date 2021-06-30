@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { LoginModule } from './login/login.module';
     BrowserModule,
     AppRoutingModule,
     LoginModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
