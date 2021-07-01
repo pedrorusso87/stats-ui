@@ -1,48 +1,52 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { combineLatest, Subject } from 'rxjs';
+import { UserRegistrationRequest } from './model/register-model';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit, OnDestroy {
-  private unsubscribe$ = new Subject<void>();
-
+export class RegisterComponent implements OnInit {
   registerForm = new FormGroup({
     email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
     username: new FormControl('', Validators.required)
   });
-  user: any;
+  userRegistrationRequest: UserRegistrationRequest
+  errors = false;
+  errorMessage = null;
+  
   constructor(
-    private spinner: NgxSpinnerService,
-    private router: Router
-  ) { }
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private spinner: NgxSpinnerService
+  ) { 
+    
+  }
 
   ngOnInit(): void {
   }
 
   onSubmit(): void {
-    /*this.store.dispatch(new fromRegister.RegisterUser({
+   /* this.userRegistrationRequest = {
+      username: this.getUsername(),
       email: this.getEmail(),
       password: this.getPassword()
-    }));*/
-    this.spinner.show();
-    //this.listenForRegister();
+    }*/
+    this.validateRegistrationForm();
   }
 
- /* listenForRegister(): void {
-    combineLatest([this.registeredUserPending$, this.registeredUser$]).subscribe(
-      ([pending, user]) => {
-        if (!pending && user) {
-          this.spinner.hide();
-          this.router.navigateByUrl('/create-match');
-        }
-      });
-  }*/
+  validateRegistrationForm(): void {
+    if (this.registerForm.valid) {
+      this.errors = false;
+      this.spinner.show();
+    } else {
+      this.errors = true;
+    }
+  }
 
   getEmail(): any {
     return this.registerForm.get('email')?.value;
@@ -54,10 +58,5 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
   getUsername(): any {
     return this.registerForm.get('username')?.value;
-  }
-
-  ngOnDestroy(): void {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
   }
 }

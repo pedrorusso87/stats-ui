@@ -1,16 +1,39 @@
 <div class="container session-form-container">
+  <div *ngIf="errorMessage" class="row">
+    <div class="col-md-6">
+      <ngb-alert  [type]="'danger'" (closed)="close()">{{ errorMessage }}</ngb-alert>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-6 session-form">
       <h3 class="session-form-title">{{ 'create new account' | titlecase}}</h3>
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <input type="email" class="form-control" placeholder="Your Email *" value="" formControlName="email"/>
+          <input 
+            type="email" 
+            [ngClass]="errors && registerForm.controls['email'].errors ? 'form-control error-field' : 'form-control'" 
+            placeholder="Your Email *" 
+            value="" 
+            formControlName="email"
+          />
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Your Username *" value="" formControlName="username"/>
+          <input 
+            type="text" 
+            [ngClass]="errors && registerForm.controls['username'].errors ? 'form-control error-field' : 'form-control'"  
+            placeholder="Your Username *" 
+            value="" 
+            formControlName="username"
+          />
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" placeholder="Your Password *" value="" formControlName="password"/>
+          <input 
+            type="password"
+            [ngClass]="errors && registerForm.controls['password'].errors ? 'form-control error-field' : 'form-control'"   
+            placeholder="Your Password *" 
+            value="" 
+            formControlName="password"
+          />
         </div>
         <div class="row mb-3 mt-4">
           <button type="submit "class="btn btn-success btn-lg btn-block"> {{'register' | titlecase }}</button>
