@@ -16,6 +16,9 @@
             value="" 
             formControlName="email"
           />
+          <span class="error-message" *ngIf="errors && registerForm.controls['email'].errors?.required">
+            * Email is required.
+          </span>
         </div>
         <div class="form-group">
           <input 
@@ -25,6 +28,9 @@
             value="" 
             formControlName="username"
           />
+          <span class="error-message" *ngIf="errors && registerForm.controls['username'].errors?.required">
+            * Username is required.
+          </span>
         </div>
         <div class="form-group">
           <input 
@@ -34,6 +40,9 @@
             value="" 
             formControlName="password"
           />
+          <span class="error-message" *ngIf="errors && registerForm.controls['password'].errors?.required">
+            * Password is required.
+          </span>
         </div>
         <div class="row mb-3 mt-4">
           <button type="submit "class="btn btn-success btn-lg btn-block"> {{'register' | titlecase }}</button>

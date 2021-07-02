@@ -6,6 +6,7 @@ import { RegisterComponent } from './register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { AuthService } from '../services/auth.service';
 
 @NgModule({
   declarations: [RegisterComponent],
@@ -16,7 +17,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ReactiveFormsModule,
     NgxSpinnerModule,
   ],
-  providers: [
+  providers: [ AuthService
   ]
 })
 export class RegisterModule { }

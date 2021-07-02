@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { combineLatest, Subject } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 import { UserRegistrationRequest } from './model/register-model';
 @Component({
   selector: 'app-register',
@@ -20,23 +21,23 @@ export class RegisterComponent implements OnInit {
   errorMessage = null;
   
   constructor(
-    private formBuilder: FormBuilder,
-    private router: Router,
+    private authService: AuthService,
     private spinner: NgxSpinnerService
-  ) { 
-    
-  }
+  ) {}
 
   ngOnInit(): void {
   }
 
   onSubmit(): void {
-   /* this.userRegistrationRequest = {
+    this.userRegistrationRequest = {
       username: this.getUsername(),
       email: this.getEmail(),
       password: this.getPassword()
-    }*/
-    this.validateRegistrationForm();
+    }
+    //this.validateRegistrationForm();
+    this.authService.register(this.userRegistrationRequest).subscribe(response => {
+      console.log(response);
+    });
   }
 
   validateRegistrationForm(): void {
