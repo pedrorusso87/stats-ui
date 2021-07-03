@@ -3,6 +3,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { combineLatest, Subject } from 'rxjs';
+import { LoginRequest } from '../register/model/register-model';
+import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,6 +20,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private router: Router,
     private fb: FormBuilder,
     private spinner: NgxSpinnerService,
+    private authService: AuthService
     ) {
       this.loginForm = this.fb.group({
         username: new FormControl('', Validators.required),
@@ -35,17 +38,28 @@ export class LoginComponent implements OnInit, OnDestroy {
   validateForm(): void {
     if (this.loginForm.valid) {
       this.errors = false;
-      this.spinner.show();
+     // this.spinner.show();
+      this.loginUser()
     } else {
       this.errors = true;
     }
+  }
+
+  loginUser() {
+    const userLoginRequest = {
+      username: this.getEmail(),
+      password: this.getPassword()
+    } as LoginRequest
+    this.authService.login(userLoginRequest).subscribe(response => {
+      console.log(response)
+    })
   }
 
   listenForLogin(): void {
   }
 
   getEmail(): any {
-    return this.loginForm.get('email')?.value;
+    return this.loginForm.get('username')?.value;
   }
 
   getPassword(): any {
