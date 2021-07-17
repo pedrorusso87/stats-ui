@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   validateForm(): void {
     if (this.loginForm.valid) {
       this.errors = false;
-     // this.spinner.show();
+      this.spinner.show();
       this.loginUser()
     } else {
       this.errors = true;
@@ -51,7 +51,10 @@ export class LoginComponent implements OnInit, OnDestroy {
       password: this.getPassword()
     } as LoginRequest
     this.authService.login(userLoginRequest).subscribe(response => {
-      console.log(response)
+      if (response.authenticationToken) {
+        this.spinner.hide();
+        this.router.navigate(['/dashboard'])
+      }
     })
   }
 
