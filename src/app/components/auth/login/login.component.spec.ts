@@ -8,7 +8,7 @@ import { AuthService } from '../services/auth.service';
 
 import { LoginComponent } from './login.component';
 
-fdescribe('LoginComponent', () => {
+describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
   const mockResponse = {
