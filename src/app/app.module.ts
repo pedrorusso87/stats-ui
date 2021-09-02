@@ -8,16 +8,16 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginModule } from './components/auth/login/login.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxWebstorageModule } from 'ngx-webstorage';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule } from '@angular/material/card';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { ComponentsModule } from './components/components.module';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DashboardComponent,
     NavbarComponent
   ],
   imports: [
@@ -28,7 +28,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HttpClientModule,
     NgxWebstorageModule.forRoot(),
     BrowserAnimationsModule,
-    MatCardModule
+    ComponentsModule,
+    StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 20
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
