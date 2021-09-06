@@ -8,7 +8,7 @@ const initialState: Tournament[] = [{
   name: 'Tournament 2'
 }]
 
-export function reducer(state = [initialState], action: fromStats.ListTournaments) {
+export function reducer(state = initialState, action: fromStats.ListTournaments) {
   switch(action.type) {
     case fromStats.LIST_TOURNAMENTS: {
       return state
