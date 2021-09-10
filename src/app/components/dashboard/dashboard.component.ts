@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { LocalStorageService } from 'ngx-webstorage';
-import * as fromStats from '../stats/store';
+import * as fromStats from '../stats-page/store';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
   }
 
   navigate(path: string): void {
-    this.store.dispatch(new fromStats.ListTournaments())
+    this.store.dispatch(new fromStats.GetTournaments())
     this.router.navigate([path]);
   }
 

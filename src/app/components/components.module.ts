@@ -2,18 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatCardModule } from '@angular/material/card';
-import { StatsComponent } from './stats/stats.component';
-import { StoreModule } from '@ngrx/store';
-import * as fromStats from './stats/store/reducers';
 import { MatSelectModule } from '@angular/material/select';
-
+import { StatsPageModule } from './stats-page/stats-page.module';
 @NgModule({
-  declarations: [DashboardComponent, StatsComponent],
+  declarations: [DashboardComponent],
   imports: [
     CommonModule,
     MatCardModule,
     MatSelectModule,
-    StoreModule.forFeature('tournaments', fromStats.reducers)
+    StatsPageModule
   ]
 })
 export class ComponentsModule { }
