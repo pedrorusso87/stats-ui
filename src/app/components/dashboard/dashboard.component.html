@@ -2,20 +2,26 @@
   <p>Welcome {{user}}</p>
 </div>
 <div class="row">
-  <div class="col-lg-4 card-container">
+  <div class="col-lg-3 card-container">
     <mat-card class="card">
       <img mat-card-image class="card-image" src="assets/images/soc1.jpg">
       <mat-card-subtitle>{{'nuevo torneo' | uppercase}}</mat-card-subtitle>
     </mat-card>
   </div>
-  <div class="col-lg-4 card-container">
+  <div class="col-lg-3 card-container">
     <mat-card class="card">
       <img mat-card-image class="card-image" src="assets/images/soc2.jpg">
       <mat-card-subtitle>{{'cargar partido' | uppercase}}</mat-card-subtitle>
     </mat-card>
   </div>
-  <div class="col-lg-4 card-container">
+  <div class="col-lg-3 card-container">
     <mat-card class="card" (click)="navigate('stats')">
+      <img mat-card-image class="card-image" src="assets/images/soc3.jpg">
+      <mat-card-subtitle>{{'ver estadísticas' | uppercase}}</mat-card-subtitle>
+    </mat-card>
+  </div>
+  <div class="col-lg-3 card-container">
+    <mat-card appMaterialElevetion class="card" (click)="navigate('stats')">
       <img mat-card-image class="card-image" src="assets/images/soc3.jpg">
       <mat-card-subtitle>{{'ver estadísticas' | uppercase}}</mat-card-subtitle>
     </mat-card>
