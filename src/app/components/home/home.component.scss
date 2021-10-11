@@ -15,18 +15,30 @@
   text-align: center;
 }
 
-img:hover {
-  transform: scale(0.8) translateY(-30px);
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+.mat-card {
+  background: none;
+  transition: 0.2s;
 }
 
-img {
-  transform: scale(0.7);
-  transition: 0.2s;
+.card-subtitle {
+  color: white;
+  font-family: "Grotesk-Regular";
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+}
+
+mat-card:hover {
+  transform: scale(0.9) translateY(-30px);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
 }
 
 #left {
   margin-left: 4rem !important;
+}
+
+#right {
+  margin-left: 25rem !important;
 }
 
 #title {
