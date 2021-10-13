@@ -9,24 +9,28 @@
     <mat-card class="card">
       <img mat-card-image class="card-image" src="assets/images/home2.png">
       <mat-card-subtitle class="card-subtitle">{{'registra tu equipo' | uppercase}}</mat-card-subtitle>
+      <mat-card-footer class="card-footer">Crea tu equipo con sus jugadores y guarda las estadísticas. </mat-card-footer>
     </mat-card>
   </div>
   <div class="col-lg-2 col-sm-2">
     <mat-card class="card">
       <img mat-card-image class="card-image" src="assets/images/home2.png">
       <mat-card-subtitle class="card-subtitle">{{'nueva competicion' | uppercase}}</mat-card-subtitle>
+      <mat-card-footer class="card-footer">Crea una competicion y registra a los equipos participantes</mat-card-footer>
     </mat-card>
   </div>  
   <div class="col-lg-2 col-sm-2 mx-5" id="right">
-    <mat-card class="card">
+    <mat-card class="card" (click)="navigate('teams/all')">
       <img mat-card-image class="card-image" src="assets/images/home2.png">
-      <mat-card-subtitle class="card-subtitle">{{'favoritos' | uppercase}}</mat-card-subtitle>
+      <mat-card-subtitle class="card-subtitle">{{'ver equipos' | uppercase}}</mat-card-subtitle>
+      <mat-card-footer class="card-footer">Obtiene una lista de los equipos mas relevantes y observa sus estadísticas.</mat-card-footer>
     </mat-card>
   </div>
   <div class="col-lg-2 col-sm-2">
     <mat-card class="card">
       <img mat-card-image class="card-image" src="assets/images/home2.png">
-      <mat-card-subtitle class="card-subtitle">{{'registra tu equipo' | uppercase}}</mat-card-subtitle>
+      <mat-card-subtitle class="card-subtitle">{{'mis favoritos' | uppercase}}</mat-card-subtitle>
+      <mat-card-footer class="card-footer">Revisa el desempeño de los equipos que ya sigues.</mat-card-footer>
     </mat-card>
   </div>
 </div>

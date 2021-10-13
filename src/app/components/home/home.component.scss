@@ -4,12 +4,11 @@
 }
 
 .container {
-  height: 25%;
+  height: 27%;
 }
 
 .home-title {
   color: white;
-  font-family: "Grotesk-SemiBold";
   padding-top: 180px;
   padding-bottom: 50px;
   text-align: center;
@@ -28,9 +27,24 @@
   font-size: 1.5rem;
 }
 
+.card-footer {
+  color: white;
+  font-family: "Grotesk-Light";
+  text-align: center;
+  visibility: hidden;
+}
+
 mat-card:hover {
   transform: scale(0.9) translateY(-30px);
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+
+  mat-card-footer {
+    visibility: visible;
+  }
+}
+
+card-footer:hover {
+  visibility: visible;
 }
 
 #left {
@@ -42,5 +56,7 @@ mat-card:hover {
 }
 
 #title {
-  font-size: 3.25rem;
+  font-size: 4.25rem;
+  font-family: "Bebas Neue";
+  letter-spacing: 0.5rem;
 }

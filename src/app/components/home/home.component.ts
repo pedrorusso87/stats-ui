@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-showLogin = true;
 
   ngOnInit(): void {
   }
+
+  constructor(
+    private router: Router
+  ){}
+
+  navigate(path) {
+    this.router.navigateByUrl(path);
+  }
+  
 
 }
