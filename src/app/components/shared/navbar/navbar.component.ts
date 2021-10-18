@@ -8,7 +8,7 @@ import { LoginDialogComponent } from '../../auth/login/login.component';
 })
 export class NavbarComponent implements OnInit {
 
-  disableLogin = false;
+  showNav = true;
   registeredUser: any;
   constructor(
     public dialog: MatDialog
@@ -18,13 +18,14 @@ export class NavbarComponent implements OnInit {
   }
 
   onLoginClicked(): void {
-    this.disableLogin = true;
+    this.showNav = false;
     const dialogRef = this.dialog.open(LoginDialogComponent, {
-     width: '500px'
+     width: '380px',
+     backdropClass: 'backdropBackground'
     })
 
     dialogRef.afterClosed().subscribe(() => {
-      this.disableLogin = false;
+      this.showNav = true;
       console.log('The dialog was closed');
     });
   }

@@ -6,36 +6,32 @@
   </div>
   <div class="row">
     <div class="session-form">
-      <h3 class="session-form-title text-center">{{ 'login' | titlecase}}</h3>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <input [ngClass]="errors && loginForm.controls['username'].errors ? 'form-control error-field' : 'form-control'" 
             type="text" 
-            placeholder="Your Username *" 
+            placeholder="Usuario *" 
             value="" 
             formControlName="username"/>
           <span class="error-message" *ngIf="errors && loginForm.controls['username'].errors?.required">
-            * Username is required.
+            * Campo obligatorio.
           </span>
         </div>
         <div class="form-group mt-3">
           <input [ngClass]="errors && loginForm.controls['password'].errors ? 'form-control error-field' : 'form-control'" 
             type="password" 
-            placeholder="Your Password *"
+            placeholder="Clave *"
             value=""
             formControlName="password"/>
           <span class="error-message" *ngIf="errors && loginForm.controls['password'].errors?.required">
-            * Password is required.
+            * Campo obligatorio.
           </span>
         </div>
         <div class="row mb-3 mt-4">
           <button type="submit" class="btn btn-primary btn-lg btn-block"> {{'login' | titlecase }}</button>
         </div>
         <div class="form-group">
-          <a href="#" class="ForgetPwd">{{ 'forgot password?' | titlecase}}</a>
-        </div>
-        <div>
-          <a [routerLink]="['/register']" class="ForgetPwd">{{ 'Create account'}}</a>
+          <a href="#" class="ForgetPwd">{{ 'recordar clave' | titlecase}}</a>
         </div>
       </form>
     </div>
