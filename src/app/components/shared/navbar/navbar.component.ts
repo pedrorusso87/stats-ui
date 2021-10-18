@@ -20,8 +20,9 @@ export class NavbarComponent implements OnInit {
   onLoginClicked(): void {
     this.showNav = false;
     const dialogRef = this.dialog.open(LoginDialogComponent, {
-     width: '380px',
-     backdropClass: 'backdropBackground'
+      autoFocus: false,
+      backdropClass: 'backdropBackground',
+      width: '380px',
     })
 
     dialogRef.afterClosed().subscribe(() => {

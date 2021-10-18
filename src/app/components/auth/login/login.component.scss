@@ -4,10 +4,11 @@ input {
 }
 
 .btn {
-  font-weight: 500;
   border: none;
+  font-weight: 500;
+  margin-left: 15px;
   padding: 2%;
-  width: 50%;
+  width: 90%;
 }
 
 .btnForgetPwd {
@@ -29,6 +30,16 @@ input {
   color: lightcoral;
 }
 
+.form-field {
+  font-family: "Grotesk-Regular";
+  margin-left: 15px;
+  width: 90%;
+}
+
 .row {
   justify-content: center;
+}
+
+.session-form-title {
+  font-family: "Grotesk-Regular";
 }

@@ -6,32 +6,27 @@
   </div>
   <div class="row">
     <div class="session-form">
+      <h2 class="session-form-title">{{'versus app login' | uppercase}}</h2>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <input [ngClass]="errors && loginForm.controls['username'].errors ? 'form-control error-field' : 'form-control'" 
-            type="text" 
-            placeholder="Usuario *" 
-            value="" 
-            formControlName="username"/>
-          <span class="error-message" *ngIf="errors && loginForm.controls['username'].errors?.required">
-            * Campo obligatorio.
-          </span>
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>{{'usuario' | titlecase}}</mat-label>
+            <input [formControl]="username" matInput required>
+            <mat-error *ngIf="username.invalid">{{'campo obligatorio' | titlecase}}</mat-error>
+          </mat-form-field>
         </div>
         <div class="form-group mt-3">
-          <input [ngClass]="errors && loginForm.controls['password'].errors ? 'form-control error-field' : 'form-control'" 
-            type="password" 
-            placeholder="Clave *"
-            value=""
-            formControlName="password"/>
-          <span class="error-message" *ngIf="errors && loginForm.controls['password'].errors?.required">
-            * Campo obligatorio.
-          </span>
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>{{'clave' | titlecase}}</mat-label>
+            <input formControlName="password" matInput required>
+            <mat-error *ngIf="password.invalid">{{'campo obligatorio' | titlecase}}</mat-error>
+          </mat-form-field>
         </div>
-        <div class="row mb-3 mt-4">
+        <div class="form-group mb-3 mt-4">
           <button type="submit" class="btn btn-primary btn-lg btn-block"> {{'login' | titlecase }}</button>
         </div>
         <div class="form-group">
-          <a href="#" class="ForgetPwd">{{ 'recordar clave' | titlecase}}</a>
+          <a href="#" class="ForgetPwd">{{ 'olvidé mi clave' | titlecase}}</a>
         </div>
       </form>
     </div>

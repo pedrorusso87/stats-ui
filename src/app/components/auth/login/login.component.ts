@@ -14,7 +14,9 @@ export class LoginDialogComponent implements OnInit, OnDestroy {
   errors = false;
   errorMessage = null;
   loginForm: FormGroup;
-
+  username = new FormControl('', Validators.required);
+  password = new FormControl('', Validators.required);
+  
   constructor(
     private router: Router,
     private fb: FormBuilder,
@@ -22,8 +24,8 @@ export class LoginDialogComponent implements OnInit, OnDestroy {
     private authService: AuthService
     ) {
       this.loginForm = this.fb.group({
-        username: new FormControl('', Validators.required),
-        password: new FormControl('', Validators.required)
+        username: this.username,
+        password: this.password
       });
     }
 
