@@ -9,15 +9,11 @@
 
 .home-title {
   color: white;
-  padding-top: 180px;
-  padding-bottom: 50px;
+  padding-top: 140px;
+  padding-bottom: 115px;
   text-align: center;
 }
 
-.mat-card {
-  background: none;
-  transition: 0.2s;
-}
 
 .card-subtitle {
   color: white;
@@ -34,9 +30,13 @@
   visibility: hidden;
 }
 
+.row {
+  margin: 0;
+}
+
 mat-card:hover {
   transform: scale(0.9) translateY(-30px);
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+  filter: drop-shadow(0 0 100px rgba(255, 255, 255, 0.8));
 
   mat-card-footer {
     visibility: visible;
@@ -47,10 +47,8 @@ card-footer:hover {
   visibility: visible;
 }
 
-#left {
-  margin-left: 4rem !important;
+mat-card {
+  background: none;
+  transition: 0.2s;
 }
 
-#right {
-  margin-left: 25rem !important;
-}
