@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { Observable, of } from 'rxjs';
+import { of } from 'rxjs';
 import { LoginRequest } from '../register/model/register-model';
 import { AuthService } from '../services/auth.service';
 
-import { LoginComponent } from './login.component';
+import { LoginDialogComponent } from './login.component';
 
-describe('LoginComponent', () => {
-  let component: LoginComponent;
-  let fixture: ComponentFixture<LoginComponent>;
+describe('LoginDialogComponent', () => {
+  let component: LoginDialogComponent;
+  let fixture: ComponentFixture<LoginDialogComponent>;
   const mockResponse = {
     authenticationToken: 'testToken',
     username: 'test'
@@ -29,7 +29,7 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ],
+      declarations: [ LoginDialogComponent ],
       imports: [RouterTestingModule, ReactiveFormsModule, NgxSpinnerModule],
       providers: [{
         provide: AuthService,
@@ -40,7 +40,7 @@ describe('LoginComponent', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginComponent);
+    fixture = TestBed.createComponent(LoginDialogComponent);
     component = fixture.componentInstance;
     component.loginForm = loginForm;
     authService = TestBed.inject(AuthService)

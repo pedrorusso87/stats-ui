@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ComponentsModule } from './components/components.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     NgxWebstorageModule.forRoot(),
     BrowserAnimationsModule,
     ComponentsModule,
+    MatDialogModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       maxAge: 20

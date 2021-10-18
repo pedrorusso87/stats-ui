@@ -10,7 +10,7 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginDialogComponent implements OnInit, OnDestroy {
   errors = false;
   errorMessage = null;
   loginForm: FormGroup;
