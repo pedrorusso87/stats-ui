@@ -1,8 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { combineLatest, Subject } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { UserRegistrationRequest } from './model/register-model';
 @Component({
@@ -10,20 +8,28 @@ import { UserRegistrationRequest } from './model/register-model';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
-  registerForm = new FormGroup({
-    email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
-    username: new FormControl('', Validators.required)
-  });
+export class RegisterModalComponent implements OnInit {
+  registerForm: FormGroup;
+  email = new FormControl('', Validators.required);
+  username = new FormControl('', Validators.required);
+  password = new FormControl('', Validators.required);
   userRegistrationRequest: UserRegistrationRequest
   errors = false;
   errorMessage = null;
+  hide = true;
+  hidePassword = true;
   
   constructor(
     private authService: AuthService,
+    private fb: FormBuilder,
     private spinner: NgxSpinnerService
-  ) {}
+  ) {
+    this.registerForm = this.fb.group({
+      email: this.email,
+      username: this.username,
+      password: this.password
+    });
+  }
 
   ngOnInit(): void {
   }

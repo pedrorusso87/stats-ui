@@ -4,10 +4,19 @@ input {
 }
 
 .btn {
-  font-weight: 500;
   border: none;
+  font-weight: 500;
+  margin-left: 15px;
   padding: 2%;
-  width: 50%;
+  width: 85%;
+}
+
+.form-field {
+  font-family: "Roboto";
+}
+
+.form-control {
+  margin-bottom: 10px;
 }
 
 .row {
@@ -18,14 +27,6 @@ input {
   background-color: darkslategray;
 }
 
-.form-control {
-  margin-bottom: 10px;
-}
-
-.error-field {
-  border: solid red;
-}
-
-.error-message {
-  color: lightcoral;
+::ng-deep .mat-form-field-flex {
+  align-items: center !important;
 }

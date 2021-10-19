@@ -67,29 +67,23 @@
   margin-left: 60px;
 }
 
+.error-field {
+  border: solid red;
+}
+
+.error-message {
+  color: lightcoral;
+}
+
+.form-field {
+  font-family: "Grotesk-Regular";
+  margin-left: 15px;
+  width: 90%;
+}
+
 .mat-dialog-container {
   background: none;
   padding: 0px !important;
-}
-
-.session-form-container {
-  align-items: center;
-}
-
-.session-form {
-  background: #282726;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 15px;
-  font-family: "Grotesk-Regular";
-  padding: 9%;
-  text-align: center;
-  width: 45%;
-}
-
-.session-form h3 {
-  text-align: center;
-  margin-bottom: 5%;
-  color: #fff;
 }
 
 .mat-card,
@@ -112,6 +106,30 @@
 
 .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
   color: lightgreen;
+}
+
+.session-form-container {
+  align-items: center;
+}
+
+.session-form {
+  background: #282726;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 15px;
+  font-family: "Grotesk-Regular";
+  padding: 9%;
+  text-align: center;
+  width: 45%;
+}
+
+.session-form-title {
+  font-family: "Grotesk-Regular";
+}
+
+.session-form h3 {
+  text-align: center;
+  margin-bottom: 5%;
+  color: #fff;
 }
 
 #title {
