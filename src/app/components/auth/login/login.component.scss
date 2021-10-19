@@ -26,3 +26,7 @@ input {
   justify-content: center;
 }
 
+::ng-deep .mat-form-field-flex {
+  align-items: center !important;
+}
+

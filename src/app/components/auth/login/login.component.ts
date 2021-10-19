@@ -13,6 +13,7 @@ import { AuthService } from '../services/auth.service';
 export class LoginDialogComponent implements OnInit, OnDestroy {
   errors = false;
   errorMessage = null;
+  hide = true;
   loginForm: FormGroup;
   username = new FormControl('', Validators.required);
   password = new FormControl('', Validators.required);

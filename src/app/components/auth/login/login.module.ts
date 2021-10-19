@@ -5,6 +5,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginDialogComponent } from './login.component';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [LoginDialogComponent],
   imports: [
@@ -13,7 +14,8 @@ import { MatInputModule } from '@angular/material/input';
     LoginRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatIconModule
   ],
   exports: [LoginDialogComponent]
 })

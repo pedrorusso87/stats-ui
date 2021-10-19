@@ -25,6 +25,7 @@
 .card-footer {
   color: white;
   font-family: "Grotesk-Light";
+  font-size: 18px;
   text-align: center;
   visibility: hidden;
 }
@@ -34,7 +35,7 @@
 }
 
 mat-card:hover {
-  transform: scale(0.9) translateY(-30px);
+  transform: scale(0.7) translateY(-30px);
   filter: drop-shadow(0 0 100px rgba(255, 255, 255, 0.8));
 
   mat-card-footer {
@@ -49,6 +50,7 @@ card-footer:hover {
 mat-card {
   background: none;
   border: none;
+  transform: scale(0.8);
   transition: 0.2s;
 }
 
