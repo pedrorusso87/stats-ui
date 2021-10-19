@@ -35,11 +35,15 @@
         <div class="form-group">
           <mat-form-field appearance="outline" class="form-field">
             <mat-label>{{'repetir clave' | titlecase}}</mat-label>
-            <input [formControl]="username" matInput [type]="hide ? 'password' : 'text'" required>
+            <input [formControl]="confirmPassword" 
+              [type]="hide ? 'password' : 'text'"
+              (keyup)="passwordMatch()"
+              required
+              matInput>
             <mat-icon matSuffix (click)="hide = !hide">
               {{hide ? 'visibility_off' : 'visibility'}}
             </mat-icon>
-            <mat-error *ngIf="username.invalid">{{'campo obligatorio' | titlecase}}</mat-error>
+            <mat-error *ngIf="confirmPassword.errors">{{'las claves deben ser iguales' | titlecase}}</mat-error>
           </mat-form-field>
         </div>
         <div class="row mb-3 mt-4">
